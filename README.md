@@ -4,6 +4,8 @@ DevRadar is a platform to locate nearby developers, using the location and the g
 
 This project was developed using **Node.js** to *Backend*, **React** to *Frontend Web*, and **React Native** to *Frontend Mobile*.
 
+<img src="https://user-images.githubusercontent.com/64630240/80799650-54622300-8b9f-11ea-885d-bd3109f79805.png" width="100%">
+
 
 ## Prerequirements
 
