@@ -58,7 +58,7 @@ To execute the *Backend* and use the API, run `npm start`.
 
 To execute the *Frontend Web* and use the web interface, run `npm start`. Wait for opnening a tab in the browser with the interface.
 
-To execute the *Frontend Mobile* and use the mobile interface, run `expo start`. Wait for opening a tab in the browser with a *QR code*, that you need to scan with your mobile device, using the **Expo** app. You also need to be connected to the same network, in both devices.
+To execute the *Frontend Mobile* and use the mobile interface, run `npm start`. Wait for opening a tab in the browser with a *QR code*, that you need to scan with your mobile device, using the **Expo** app. You also need to be connected to the same network, in both devices.
 
 > **NOTE:**\
 > When the **Expo-CLI** start running and connecting with the mobile device, if you get some error like: *Error: ENOSPC: System limit for number of file watchers reached*, try this [solution](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details
@@ -77,7 +77,7 @@ Once you run the *Backend*, and assuming that the database is up, you can start 
 | GET    | /devs         |                                         |                   |                                               |
 | POST   | /devs         |                                         |                   | {github_username, techs, latitude, longitude} |
 | PUT    | /devs/update  |                                         |  github_username  | {bio, techs}                                  |
-| PUT    | /devs/destroy |                                         |  github_username  |                                               |
+| DELETE | /devs/destroy |                                         |  github_username  |                                               |
 | GET    | /search       | latitude, longitude, maxDistance, techs |                   |                                               |
 
 ### Frontend Web
