@@ -81,7 +81,7 @@ class App extends React.Component {
   
     const handleRemoveDev = async (github_username) => {
       try {
-        await api.put(`/devs/destroy/${github_username}`);
+        await api.delete(`/devs/destroy/${github_username}`);
   
         const updateDevs = this.state.devs.filter(dev => dev.github_username !== github_username);
         this.setState({ 'devs': updateDevs });
