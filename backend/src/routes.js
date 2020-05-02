@@ -11,7 +11,7 @@ routes.get('/', (request, response) => {
 routes.get('/devs', DevController.index);
 routes.post('/devs', DevController.store);
 routes.put('/devs/update/:github_username', DevController.update);
-routes.put('/devs/destroy/:github_username', DevController.destroy);
+routes.delete('/devs/destroy/:github_username', DevController.destroy);
 
 routes.get('/search', SearchController.index);
 
