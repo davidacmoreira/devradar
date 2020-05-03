@@ -4,7 +4,7 @@ DevRadar is a platform to locate nearby developers, using the location and the g
 
 This project was developed using **Node.js** to *Backend*, **React** to *Frontend Web*, and **React Native** to *Frontend Mobile*.
 
-<img src="https://user-images.githubusercontent.com/64630240/80799650-54622300-8b9f-11ea-885d-bd3109f79805.png" width="100%">
+<img src=".github/readme_header.png" width="100%">
 
 
 ## Prerequirements
@@ -17,7 +17,7 @@ Execute the command `node -v` to check if is already installed.
 
 ### Expo-CLI (or Android/iOS Emulator)
 
-To use the mobile interface you need an emulator of Android/iOS system, or you can use [**Expo-CLI**](https://www.docs.expo.io/workflow/expo-cli/).
+To test the use of the mobile interface you need an emulator of Android/iOS system, or you can use [**Expo-CLI**](https://www.docs.expo.io/workflow/expo-cli/).
 
 In case of using **Expo-CLI**, you also need to install [**Expo**](https://www.play.google.com/store/apps/details?id=host.exp.exponent&hl=en) app in the Android mobile device or [**Expo Client**](https://apps.apple.com/us/app/expo-client/id982107779) app in the iOS mobile device.
 
@@ -52,7 +52,7 @@ To install all the packages you need to run `npm install` inside each directory.
 
 ## Run
 
-> **NOTE:** Each of the projects can run idependent and can be used, but both, *Frontend Web* and *Frontend Mobile* depend on the *Backend* to execute operations that need to access to the datatbase, and will show some errors if you try to done some of those operations without the *Backend* running.
+> **NOTE:** The *Frontend Web* and *Frontend Mobile* depend on the *Backend* to execute operations that need to access to the datatbase, and will show some errors if you try to done some of those operations without the *Backend* running.
 
 To execute the *Backend* and use the API, run `npm start`. 
 
