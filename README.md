@@ -23,7 +23,7 @@ In case of using **Expo-CLI**, you also need to install [**Expo**](https://www.p
 
 ### MongoDB
 
-The database system can be setup in one of the next options:
+The database system used in this project is **MongoDB**, a non-relational database. You can setup the database using one of the next options:
 
 * Install and setup [**MongoDB**](https://www.mongodb.com/download-center/community) in local machine.
 
@@ -31,16 +31,17 @@ The database system can be setup in one of the next options:
 
 * Use the Cloud Service [**Mongodb** Atlas](https://www.mongodb.com/cloud/atlas), to setup a account and configure a database running outside of your local machine, in a Cloud Platform.
 
-
 ### Configuration
 
-* Create a database in your previous setup of **MongoDB** and give a intuitive name like `devradar`.
-
-* Edit the file `config.json` in all tree directories (`backend`, `web`, `mobile`): 
-    * *"URI_MONGODB": "\<HOST\>:\<PORT\>/\<DATABASE\>"*
-    * *"URI_BACKEND": "\<HOST\>:\<PORT\>"*
-    * *"LOCAL_IP": "\<LOCAL_IP\>"*
-    * *"PORT_BACKEND": "\<PORT\>"*
+* *(Required)* - Create a database in your previous setup of **MongoDB** and give a intuitive name like `devradar`.
+* *(Required)* - Edit the file `./backend/config.json`, to configure your **MongoDB** database: 
+    * *"URI_MONGODB": "**\<HOST\>:\<PORT\>/\<DATABASE\>**"*
+* *(Required)* - Edit the file `./mobile/config.json`, to configure your local IP address: 
+    * *"LOCAL_IP": "**\<LOCAL_IP\>**"*
+* *(Optional)* - If you need to configure a different port for the *Backend*, edit the file `config.json` in all tree directories (`backend`, `web`, `mobile`):
+    * *"PORT_BACKEND": "**\<PORT\>**"*
+* *(Optional)* - If you need to configure a different port for the *Frontend Web*, edit the file `./frontend/package.json`:
+    * *{ ...,  "scripts": { "start": "set PORT=**\<PORT\>** && ...", ...}, ...}*
 
 
 ## Install
@@ -52,18 +53,17 @@ To install all the packages you need to run `npm install` inside each directory.
 
 ## Run
 
-> **NOTE:** The *Frontend Web* and *Frontend Mobile* depend on the *Backend* to execute operations that need to access to the datatbase, and will show some errors if you try to done some of those operations without the *Backend* running.
-
 To execute the *Backend* and use the API, run `npm start`. 
 
 To execute the *Frontend Web* and use the web interface, run `npm start`. Wait for opnening a tab in the browser with the interface.
 
 To execute the *Frontend Mobile* and use the mobile interface, run `npm start`. Wait for opening a tab in the browser with a *QR code*, that you need to scan with your mobile device, using the **Expo** app. You also need to be connected to the same network, in both devices.
 
-> **NOTE:**\
-> When the **Expo-CLI** start running and connecting with the mobile device, if you get some error like: *Error: ENOSPC: System limit for number of file watchers reached*, try this [solution](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details
-).\
-> If you are using *Windows* and run into problems connecting the **Explo** app in mobile device with the running **Expo-CLI**, try to turn off the *Windows Firewall* for your private network.\
+> **NOTES:**
+> * The *Frontend Web* and *Frontend Mobile* depend on the *Backend* to execute operations that need access to the datatbase, and will show some errors if you try to done some of those operations without the *Backend* running.
+> * When the **Expo-CLI** start running and connecting with the mobile device, if you get some error like: *Error: ENOSPC: System limit for number of file watchers reached*, try this [solution](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details
+).
+> * If you are using *Windows* and run into problems connecting the **Explo** app in mobile device with the running **Expo-CLI**, try to turn off the *Windows Firewall* for your private network.
 
 
 ## Usage
@@ -76,8 +76,8 @@ Once you run the *Backend*, and assuming that the database is up, you can start 
 | ------ | ------------- | --------------------------------------- | ----------------- | --------------------------------------------- |
 | GET    | /devs         |                                         |                   |                                               |
 | POST   | /devs         |                                         |                   | {github_username, techs, latitude, longitude} |
-| PUT    | /devs/update  |                                         |  github_username  | {bio, techs}                                  |
-| DELETE | /devs/destroy |                                         |  github_username  |                                               |
+| PUT    | /devs/update  |                                         | github_username   | {bio, techs}                                  |
+| DELETE | /devs/destroy |                                         | github_username   |                                               |
 | GET    | /search       | latitude, longitude, maxDistance, techs |                   |                                               |
 
 ### Frontend Web
