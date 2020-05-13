@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 import './styles.css';
 
 
-function DevFormUpdate({ onSubmit, userEdit }) {
-  const [bio, setBio] = useState('');
-  const [techs, setTechs] = useState('');
+function DevFormUpdate({ onSubmit, idDevEdit, bioDevEdit, techsDevEdit }) {
+  const [bio, setBio] = useState(bioDevEdit);
+  const [techs, setTechs] = useState(techsDevEdit);
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     await onSubmit({
-      github_username: userEdit,
+      github_username: idDevEdit,
       bio,
       techs
     });
@@ -21,7 +21,7 @@ function DevFormUpdate({ onSubmit, userEdit }) {
       <form onSubmit={handleSubmit}>
           <div className="input-block">
             <label>github_username</label>
-            <input name="github_username" id="github_username" value={userEdit} readOnly />
+            <input name="github_username" id="github_username" value={idDevEdit} readOnly />
           </div>
 
           <div className="input-block">

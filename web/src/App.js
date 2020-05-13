@@ -17,7 +17,9 @@ class App extends React.Component {
     this.state = {
       devs: [],
       aside: "register",
-      user_edit: ""
+      id_dev_edit: "",
+      bio_dev_edit: "",
+      techs_dev_edit: ""
     };
   }
 
@@ -47,8 +49,8 @@ class App extends React.Component {
   }
 
   render() {
-    const handleButtonEdit = (github_username) => {
-      this.setState({ "aside": "update", "user_edit": github_username });
+    const handleButtonEdit = (github_username, bio, techs) => {
+      this.setState({ "aside": "update", "id_dev_edit": github_username, "bio_dev_edit": bio, "techs_dev_edit": techs });
     };
 
     const handleAddDev = async (data) => {
@@ -72,7 +74,7 @@ class App extends React.Component {
         const updateDevs = [...this.state.devs];
         updateDevs[indexDev] = response.data;
   
-        this.setState({ 'devs': updateDevs, 'aside': 'register', 'userEdit':'' });
+        this.setState({ 'devs': updateDevs, 'aside': 'register', 'idDevEdit':'', 'bioDevEdit':'', 'techsDevEdit':'' });
       }
       catch (err) {
         alert(err.response.data.message);
@@ -107,7 +109,7 @@ class App extends React.Component {
       <div id="app">
         <aside>
           <strong>{this.state.aside}</strong>
-          <TagForm onSubmit={handleFunctions[this.state.aside]} userEdit={this.state.user_edit} />
+          <TagForm onSubmit={handleFunctions[this.state.aside]} idDevEdit={this.state.id_dev_edit} bioDevEdit={this.state.bio_dev_edit} techsDevEdit={this.state.techs_dev_edit} />
         </aside>
 
         <main>

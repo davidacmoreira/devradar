@@ -5,8 +5,8 @@ import './styles.css';
 
 function DevItem({ dev, onClickEdit, onClickRemove }) {
 
-    async function handleButtonEdit(github_username) {
-        await onClickEdit(github_username);
+    async function handleButtonEdit(github_username, bio, techs) {
+        await onClickEdit(github_username, bio, techs);
     };
 
     async function handleRemoveDev(github_username) {
@@ -21,7 +21,7 @@ function DevItem({ dev, onClickEdit, onClickRemove }) {
                     <strong>
                         {dev.name}
                         <a href={`https://github.com/${dev.github_username}`} className="button-icon"><i className="fa fa-github"></i></a>
-                        <button className="button-icon" onClick={() => handleButtonEdit(dev.github_username)}><i className="fa fa-edit"></i></button>
+                        <button className="button-icon" onClick={() => handleButtonEdit(dev.github_username, dev.bio, dev.techs.toString())}><i className="fa fa-edit"></i></button>
                         <button className="button-icon" onClick={() => handleRemoveDev(dev.github_username)}><i className="fa fa-trash"></i></button>
                     </strong>
                     <span>{dev.techs.join(', ')}</span>
