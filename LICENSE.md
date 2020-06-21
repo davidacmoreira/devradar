@@ -1,6 +1,7 @@
 MIT License
 
 Copyright (c) 2020 Rocketseat
+
 Copyright (c) 2020 David Moreira
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
